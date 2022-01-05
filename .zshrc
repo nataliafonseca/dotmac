@@ -71,6 +71,7 @@ export UPDATE_ZSH_DAYS=180
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
+         copydir
          zsh-autosuggestions
          zsh-syntax-highlighting)
 
@@ -120,11 +121,11 @@ alias refresf="exec $SHELL"
 alias clr="clear"
 alias dc="docker-compose"
 alias amend="git commit --amend --no-edit"
-alias config-eslint="exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/paulolramos/eslint-prettier-airbnb-react/master/eslint-prettier-config.sh 2> /dev/null)"
 alias nothankyouadobe="sudo -H killall ACCFinderSync AGMService \"Core Sync\" AdobeCRDaemon \"Adobe Creative\" AdobeIPCBroker node \"Adobe Desktop Service\" \"Adobe Crash Reporter\";sudo -H rm -rf \"/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist\" \"/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist\" \"/Library/LaunchDaemons/com.adobe.*.plist\""
 alias homelab="ssh natalia@192.168.1.10"
 alias server="ssh natalia@192.168.1.10"
-alias magit="emacs -nw -q --load ~/.magit/init.el"
+alias updots="git pull; git add -u; git commit -m 'update dotfiles'; git push"
+alias updot="updots"
 
 function clone() {
 	repos=$@

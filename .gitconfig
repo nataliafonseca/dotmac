@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = subl
+	editor = subl --wait
 	excludesFile = /Users/natalia/.gitignore_global
 [pull]
 	ff = only
