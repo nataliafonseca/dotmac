@@ -122,10 +122,11 @@ alias clr="clear"
 alias dc="docker-compose"
 alias amend="git commit --amend --no-edit"
 alias nothankyouadobe="sudo -H killall ACCFinderSync AGMService \"Core Sync\" AdobeCRDaemon \"Adobe Creative\" AdobeIPCBroker node \"Adobe Desktop Service\" \"Adobe Crash Reporter\";sudo -H rm -rf \"/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist\" \"/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist\" \"/Library/LaunchDaemons/com.adobe.*.plist\""
-alias homelab="ssh natalia@192.168.1.10"
-alias server="ssh natalia@192.168.1.10"
-alias updots="git pull; git add -u; git commit -m 'update dotfiles'; git push"
+alias homelab="ssh natalia@192.168.0.10"
+alias server="ssh natalia@192.168.0.10"
+alias updots="git --git-dir=.dot pull; git --git-dir=.dot add -u; git --git-dir=.dot commit -m 'update dotfiles'; git --git-dir=.dot push"
 alias updot="updots"
+alias gdot="git --git-dir=.dot"
 
 function clone() {
 	repos=$@
