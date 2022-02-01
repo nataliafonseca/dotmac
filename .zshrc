@@ -72,6 +72,7 @@ export UPDATE_ZSH_DAYS=180
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
          copydir
+         zsh-z
          zsh-autosuggestions
          zsh-syntax-highlighting)
 
@@ -123,10 +124,14 @@ alias dc="docker-compose"
 alias amend="git commit --amend --no-edit"
 alias nothankyouadobe="sudo -H killall ACCFinderSync AGMService \"Core Sync\" AdobeCRDaemon \"Adobe Creative\" AdobeIPCBroker node \"Adobe Desktop Service\" \"Adobe Crash Reporter\";sudo -H rm -rf \"/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist\" \"/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist\" \"/Library/LaunchDaemons/com.adobe.*.plist\""
 alias homelab="ssh natalia@192.168.0.10"
-alias server="ssh natalia@192.168.0.10"
+alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
 alias updots="git --git-dir=.dot pull; git --git-dir=.dot add -u; git --git-dir=.dot commit -m 'update dotfiles'; git --git-dir=.dot push"
 alias updot="updots"
 alias gdot="git --git-dir=.dot"
+alias venv="source ./venv/bin/activate"
+alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
+alias minifycss="cleancss -o style.min.css style.css --with-rebase"
+alias sshignite="ssh -i "~/.ignite.pem" ubuntu@ec2-3-84-238-63.compute-1.amazonaws.com"
 
 function clone() {
 	repos=$@
