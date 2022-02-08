@@ -137,7 +137,9 @@ alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boi
 which docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
 which cleancss > /dev/null 2>&1 && alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
-which lsd > /dev/null 2>&1 && alias ls="lsd --date=relative --group-dirs=first --size=short"
+which exa > /dev/null 2>&1 && alias ls="exa -lha --time-style=long-iso --group-directories-first --sort=name --sort=ext"
+which exa > /dev/null 2>&1 && alias la="exa -a"
+which exa > /dev/null 2>&1 && alias tree="exa --tree"
 which bat > /dev/null 2>&1 && alias cat="bat"
 which gh > /dev/null 2>&1 && alias clone="gh repo clone"
 
