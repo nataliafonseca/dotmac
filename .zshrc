@@ -104,6 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:"/Applications/flutter/bin"
 export PATH=$PATH:"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
@@ -120,25 +125,23 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias refresh="exec $SHELL"
 alias refresf="exec $SHELL"
 alias clr="clear"
-alias dc="docker-compose"
 alias amend="git commit --amend --no-edit"
 alias nothankyouadobe="sudo -H killall ACCFinderSync AGMService \"Core Sync\" AdobeCRDaemon \"Adobe Creative\" AdobeIPCBroker node \"Adobe Desktop Service\" \"Adobe Crash Reporter\";sudo -H rm -rf \"/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist\" \"/Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist\" \"/Library/LaunchDaemons/com.adobe.*.plist\""
 alias homelab="ssh natalia@192.168.0.10"
 alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
 alias updots="git --git-dir=.dot pull; git --git-dir=.dot add -u; git --git-dir=.dot commit -m 'update dotfiles'; git --git-dir=.dot push"
 alias updot="updots"
-alias gdot="git --git-dir=.dot"
 alias venv="source ./venv/bin/activate"
+alias gdot="git --git-dir=.dot"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
-alias minifycss="cleancss -o style.min.css style.css --with-rebase"
-alias sshignite="ssh -i "~/.ignite.pem" ubuntu@ec2-3-84-238-63.compute-1.amazonaws.com"
-
-function clone() {
-	repos=$@
-	for repo in $repos
-	do
-		gh repo clone "${repo}"
-	done
-}
+which docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
+which cleancss > /dev/null 2>&1 && alias minifycss="cleancss -o style.min.css style.css --with-rebase"
+which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
+which lsd > /dev/null 2>&1 && alias ls="lsd --date=relative --group-dirs=first --size=short"
+which bat > /dev/null 2>&1 && alias cat="bat"
+which gh > /dev/null 2>&1 && alias clone="gh repo clone"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
