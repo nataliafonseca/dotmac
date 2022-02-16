@@ -7,7 +7,7 @@
 	editor = subl --wait
 	excludesFile = /Users/natalia/.gitignore_global
 [pull]
-	ff = only
+	rebase = true
 [push]
 	followTags = true
 [alias]
