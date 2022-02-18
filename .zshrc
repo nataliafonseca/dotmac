@@ -144,6 +144,7 @@ alias updot="updots"
 alias venv="source ./venv/bin/activate"
 alias gdot="git --git-dir=.dot"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
+alias mirage-start="degit nataliafonseca/miragejs-starter-kit miragejs"
 which docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
 which cleancss > /dev/null 2>&1 && alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
@@ -152,6 +153,14 @@ which exa > /dev/null 2>&1 && alias la="exa -lha --time-style=long-iso --group-d
 which exa > /dev/null 2>&1 && alias tree="exa --tree"
 which bat > /dev/null 2>&1 && alias cat="bat"
 which gh > /dev/null 2>&1 && alias clone="gh repo clone"
+
+function yarn-audit-fix() {
+  npm i --package-lock-only
+  npm audit fix
+  rm yarn.lock
+  yarn import
+  rm package-lock.json
+}
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
