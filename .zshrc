@@ -4,10 +4,6 @@
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 #### END FIG ENV VARIABLES ####
 
-
-
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -145,6 +141,8 @@ alias venv="source ./venv/bin/activate"
 alias gdot="git --git-dir=.dot"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
 alias mirage-start="degit nataliafonseca/miragejs-starter-kit miragejs"
+which python3 > /dev/null 2>&1 && alias py="python3"
+which python3 > /dev/null 2>&1 && alias python="python3"
 which docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
 which cleancss > /dev/null 2>&1 && alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
@@ -166,11 +164,6 @@ function yarn-audit-fix() {
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
-
-
-
-
-
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.

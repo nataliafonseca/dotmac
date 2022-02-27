@@ -17,3 +17,8 @@
 	r = !git reset --soft
 	amend = !git add --all && git commit --amend --no-edit
 	count = !git shortlog -s --grep
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
