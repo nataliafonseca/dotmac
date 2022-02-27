@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/Users/natalia/.local/bin
 
 alias refresh="exec $SHELL"
 alias refresh="exec $SHELL"
