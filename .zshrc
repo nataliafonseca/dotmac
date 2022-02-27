@@ -106,7 +106,6 @@ alias py="python"
 alias copydir="copypath"
 alias mkvenv="python -m venv ./venv"
 alias venv="source ./venv/bin/activate"
-alias pip='noglob pip'
 which docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
 which cleancss > /dev/null 2>&1 && alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
