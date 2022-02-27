@@ -109,7 +109,7 @@ which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
 which exa > /dev/null 2>&1 && alias ls="exa -lh --time-style=long-iso --group-directories-first --sort=name --sort=ext"
 which exa > /dev/null 2>&1 && alias la="exa -lha --time-style=long-iso --group-directories-first --sort=name --sort=ext"
 which exa > /dev/null 2>&1 && alias tree="exa --tree"
-which bat > /dev/null 2>&1 && alias cat="bat"
+# which bat > /dev/null 2>&1 && alias cat="bat"
 which gh > /dev/null 2>&1 && alias clone="gh repo clone"
 
 function yarn-audit-fix() {
