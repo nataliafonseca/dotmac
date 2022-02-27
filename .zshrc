@@ -3,12 +3,11 @@
 # Please make sure this block is at the start of this file.
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 #### END FIG ENV VARIABLES ####
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/natalia/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -29,14 +28,13 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=180
+zstyle ':omz:update' frequency 180
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -51,8 +49,9 @@ export UPDATE_ZSH_DAYS=180
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -77,7 +76,7 @@ export UPDATE_ZSH_DAYS=180
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-         copydir
+         copypath
          zsh-z
          zsh-autosuggestions
          zsh-syntax-highlighting)
@@ -86,48 +85,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:"/Applications/flutter/bin"
-export PATH=$PATH:"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
-export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH=$PATH:"/Applications/Postgres.app/Contents/Versions/13/bin"
-export PATH=$PATH:`yarn global bin`
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home"
-export ANDROID_HOME=~/.Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+alias refresh="exec $SHELL"
 alias refresh="exec $SHELL"
 alias refresf="exec $SHELL"
 alias clr="clear"
@@ -141,8 +101,8 @@ alias venv="source ./venv/bin/activate"
 alias gdot="git --git-dir=.dot"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
 alias mirage-start="degit nataliafonseca/miragejs-starter-kit miragejs"
-which python3 > /dev/null 2>&1 && alias py="python3"
-which python3 > /dev/null 2>&1 && alias python="python3"
+alias py="python"
+alias copydir="copypath"
 which docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
 which cleancss > /dev/null 2>&1 && alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 which dotenv-cli > /dev/null 2>&1 && alias dotenv="dotenv-cli"
@@ -160,12 +120,8 @@ function yarn-audit-fix() {
   rm package-lock.json
 }
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
-
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+eval "$(pyenv init -)"
