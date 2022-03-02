@@ -97,7 +97,7 @@ alias nothankyouadobe="sudo -H killall ACCFinderSync AGMService \"Core Sync\" Ad
 alias homelab="ssh natalia@192.168.0.10"
 alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
 alias gdot="git --git-dir=.dot"
-alias updots="gdot pull --ff-only; gdot add -u; gdot commit -m 'update dotfiles'; gdot push"
+alias updots="gdot add -u; gdot commit -m 'update dotfiles'; gdot push"
 alias venv="source ./venv/bin/activate"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
 alias mirage-start="degit nataliafonseca/miragejs-starter-kit miragejs"
