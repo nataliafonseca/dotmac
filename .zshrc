@@ -77,6 +77,8 @@ zstyle ':omz:update' frequency 180
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
          copypath
+         docker
+         docker-compose
          zsh-z
          zsh-autosuggestions
          zsh-syntax-highlighting)
