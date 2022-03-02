@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: on-failure
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: natalia
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - mongodb:/data/mongodb
+    networks:
+      - mongodb
+
+volumes:
+  mongodb:
+    driver: local
+
+networks: 
+  mongodb:
+    driver: bridge

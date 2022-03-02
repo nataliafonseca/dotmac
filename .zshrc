@@ -114,6 +114,12 @@ which exa > /dev/null 2>&1 && alias tree="exa --tree"
 which gh > /dev/null 2>&1 && alias clone="gh repo clone"
 which poetry > /dev/null 2>&1 && alias poetryrm="rm -rf `poetry env info -p`"
 
+# docker
+alias dprune="docker system prune --all --volumes"
+alias postgres="docker-compose -f postgres.yaml"
+alias mongo="docker-compose -f mongo.yaml"
+alias redis="docker-compose -f redis.yaml"
+
 function yarn-audit-fix() {
   npm i --package-lock-only
   npm audit fix

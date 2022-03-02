@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  postgresql:
+    image: postgres
+    container_name: postgresql
+    restart: on-failure
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=natalia
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgresql:/data/postgres
+    networks:
+      - postgresql
+
+volumes:
+  postgresql:
+    driver: local
+
+networks: 
+  postgresql:
+    driver: bridge
