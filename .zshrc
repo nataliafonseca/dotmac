@@ -7,7 +7,7 @@
 
 
 
-# enviroment setup
+# environment setup
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/Users/natalia/.local/bin
 
@@ -37,8 +37,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
+
 zstyle ':omz:update' mode auto 
 zstyle ':omz:update' frequency 180
+
 plugins=(git
          copypath
          docker
@@ -70,6 +72,7 @@ SPACESHIP_CHAR_SUFFIX=" "
 
 
 # aliases and functions
+## shell functions
 alias refresh="exec $SHELL"
 alias clr="clear"
 alias copydir="copypath"
