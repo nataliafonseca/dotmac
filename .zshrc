@@ -84,7 +84,7 @@ alias updots="gdot add -u; gdot commit -m 'update dotfiles'; gdot push"
 ## general
 alias py="python"
 alias clone="gh repo clone"
-alias dc="docker-compose"
+alias dc="docker compose"
 alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 alias dotenv="dotenv-cli"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
@@ -104,9 +104,9 @@ which exa > /dev/null 2>&1 && alias tree="exa --tree"
 
 ## docker images
 alias dprune="docker system prune --all --volumes"
-alias postgres="docker-compose -f postgres.yaml"
-alias mongo="docker-compose -f mongo.yaml"
-alias redis="docker-compose -f redis.yaml"
+alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml"
+alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml"
+alias redis="docker compose -f /Users/natalia/.local/bin/redis.yaml"
 
 # npm audit fix for yarn projects
 function yarn-audit-fix() {
