@@ -14,6 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -89,6 +90,15 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/Users/natalia/.local/bin
+
+# React Native Setup
+export REACT_EDITOR=code
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home
+export ANDROID_HOME=/Users/natalia/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 alias refresh="exec $SHELL"
 alias refresh="exec $SHELL"
