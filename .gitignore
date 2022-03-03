@@ -1,6 +1,7 @@
 .CFUserTextEncoding
 .Zotero/
 .android/
+.bashrc
 .cocoapods/
 .config/
 .cups/
@@ -19,6 +20,7 @@
 .npm/
 .nvm/
 .oh-my-zsh/
+.profile
 .pyenv/
 .python_history
 .snipaste/
@@ -29,6 +31,7 @@
 .yarnrc
 .z
 .zcompdump*
+.zprofile
 .zsh_history
 .zsh_sessions/
 Applications/
