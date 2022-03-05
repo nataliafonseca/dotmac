@@ -1,7 +1,8 @@
-.CFUserTextEncoding
-.Zotero/
 .android/
 .bashrc
+.cache/
+.cargo/
+.CFUserTextEncoding
 .cocoapods/
 .config/
 .cups/
@@ -11,8 +12,13 @@
 .expo/
 .fig.dotfiles.bak/
 .fig/
+.fzf.bash
 .gem/
+.gradle/
 .local/bin/blue
+.local/bin/lvim
+.local/include/
+.local/lib/
 .local/pipx/
 .local/share/
 .local/state/
@@ -28,9 +34,11 @@
 .swiftpm/
 .sync_settings/
 .Trash/
+.yarn/
 .yarnrc
 .z
 .zcompdump*
+.Zotero/
 .zprofile
 .zsh_history
 .zsh_sessions/
