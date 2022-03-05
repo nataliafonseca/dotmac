@@ -23,9 +23,16 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+## java
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+
+## rust/cargo
+export PATH="/Users/natalia/.cargo/bin:$PATH"
+
 ## react native
 export REACT_EDITOR=code
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
 export ANDROID_HOME=/Users/natalia/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -36,39 +43,22 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # oh-my-zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 zstyle ':omz:update' mode auto 
 zstyle ':omz:update' frequency 180
 
 plugins=(git
          copypath
-         docker
-         docker-compose
          zsh-z
          zsh-autosuggestions
          zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-## spaceship theme configuration
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=true
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "
+## powerlevel10k theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 # aliases and functions
