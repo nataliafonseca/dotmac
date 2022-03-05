@@ -14,6 +14,9 @@ export PATH=$PATH:/Users/natalia/.local/bin
 ## homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
+## fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ## nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
@@ -49,7 +52,10 @@ zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 180
 
 plugins=(git
+         gitfast
          copypath
+         dotenv
+         zsh-interactive-cd
          zsh-z
          zsh-autosuggestions
          zsh-syntax-highlighting)
@@ -88,8 +94,8 @@ alias homelab="ssh natalia@192.168.0.10"
 alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
 
 ## exa
-which exa > /dev/null 2>&1 && alias ls="exa -lh --time-style=long-iso --group-directories-first --sort=name --sort=ext"
-which exa > /dev/null 2>&1 && alias la="exa -lha --time-style=long-iso --group-directories-first --sort=name --sort=ext"
+which exa > /dev/null 2>&1 && alias ls="exa -lh --icons  --time-style=long-iso --group-directories-first --sort=name --sort=ext"
+which exa > /dev/null 2>&1 && alias la="exa -lha --icons --time-style=long-iso --group-directories-first --sort=name --sort=ext"
 which exa > /dev/null 2>&1 && alias tree="exa --tree"
 
 ## docker images
