@@ -96,7 +96,7 @@ alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
 ## exa
 which exa > /dev/null 2>&1 && alias ls="exa -lh --icons  --time-style=long-iso --group-directories-first --sort=name --sort=ext"
 which exa > /dev/null 2>&1 && alias la="exa -lha --icons --time-style=long-iso --group-directories-first --sort=name --sort=ext"
-which exa > /dev/null 2>&1 && alias tree="exa --tree"
+which exa > /dev/null 2>&1 && alias tree="exa --icons --tree"
 
 ## docker images
 alias dprune="docker system prune --all --volumes"
