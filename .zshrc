@@ -103,3 +103,4 @@ function yarn-audit-fix() {
   yarn import
   rm package-lock.json
 }
+eval "$(pyenv init -)"
