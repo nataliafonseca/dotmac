@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  sqlserver_web:
+    container_name: sqlserver_web
+    build: .
+    ports:
+      - "8000:80"
+    depends_on:
+      - db  
+  sqlserver_db:
+    image: "mcr.microsoft.com/mssql/server"
+    container_name: sqlserver_db
+      - "1433:1433"
+    restart: on-failure
+    environment:
+      - SA_PASSWORD=123456
+      - ACCEPT_EULA=Y
