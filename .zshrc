@@ -91,9 +91,10 @@ which exa > /dev/null 2>&1 && alias tree="exa --icons --tree"
 
 ## docker images
 alias dprune="docker system prune --all --volumes"
-alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml"
-alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml"
-alias redis="docker compose -f /Users/natalia/.local/bin/redis.yaml"
+alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml -p postgres"
+alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml -p mongo"
+alias redis="docker compose -f /Users/natalia/.local/bin/redis.yaml -p redis"
+alias sqlserver="docker compose -f /Users/natalia/.local/bin/sql_server.yaml -p sql_server"
 
 # npm audit fix for yarn projects
 function yarn-audit-fix() {

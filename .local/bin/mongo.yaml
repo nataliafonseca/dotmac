@@ -10,15 +10,3 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: natalia
       MONGO_INITDB_ROOT_PASSWORD: 123456
-    volumes:
-      - mongodb:/data/mongodb
-    networks:
-      - mongodb
-
-volumes:
-  mongodb:
-    driver: local
-
-networks: 
-  mongodb:
-    driver: bridge
