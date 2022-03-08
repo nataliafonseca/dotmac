@@ -94,7 +94,6 @@ alias dprune="docker system prune --all --volumes"
 alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml -p postgres"
 alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml -p mongo"
 alias redis="docker compose -f /Users/natalia/.local/bin/redis.yaml -p redis"
-alias sqlserver="docker compose -f /Users/natalia/.local/bin/sql_server.yaml -p sql_server"
 
 # npm audit fix for yarn projects
 function yarn-audit-fix() {
