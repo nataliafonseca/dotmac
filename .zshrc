@@ -17,6 +17,23 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+## anaconda
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+conda deactivate
+# <<< conda initialize <<<
+
 ## java
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
@@ -32,7 +49,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 
 # oh-my-zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
@@ -76,8 +92,8 @@ alias minifycss="cleancss -o style.min.css style.css --with-rebase"
 alias dotenv="dotenv-cli"
 alias create-next="yarn create next-app -e https://github.com/nataliafonseca/boilerplate_nextjs"
 alias mirage-start="degit nataliafonseca/miragejs-starter-kit miragejs"
-alias mkvenv="python -m venv ./venv"
-alias venv="source ./venv/bin/activate"
+alias mkvenv="python -m venv ./.venv"
+alias venv="source ./.venv/bin/activate"
 alias poetryrm="rm -rf `poetry env info -p`"
 
 ## ssh connection to servers
@@ -103,4 +119,3 @@ function yarn-audit-fix() {
   yarn import
   rm package-lock.json
 }
-eval "$(pyenv init -)"
