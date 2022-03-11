@@ -38,9 +38,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-## dotnet
-export DOTNET_ROOT="$(brew --prefix)/opt/dotnet/libexec"
-
 # oh-my-zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -86,6 +83,7 @@ alias mirage-start="degit nataliafonseca/miragejs-starter-kit miragejs"
 alias mkvenv="python -m venv ./.venv"
 alias venv="source ./.venv/bin/activate"
 alias poetryrm="rm -rf `poetry env info -p`"
+alias speedtest="networkQuality"
 
 ## ssh connection to servers
 alias homelab="ssh natalia@192.168.0.10"
@@ -96,7 +94,7 @@ which exa > /dev/null 2>&1 && alias ls="exa -lh --icons  --time-style=long-iso -
 which exa > /dev/null 2>&1 && alias la="exa -lha --icons --time-style=long-iso --group-directories-first --sort=name --sort=ext"
 which exa > /dev/null 2>&1 && alias tree="exa --icons --tree"
 
-## docker images
+## docker
 alias dprune="docker system prune --all --volumes"
 alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml -p postgres"
 alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml -p mongo"
