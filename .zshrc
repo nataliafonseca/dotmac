@@ -38,6 +38,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+## dotnet
+export DOTNET_ROOT="$(brew --prefix)/opt/dotnet/libexec"
+
 # oh-my-zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 
