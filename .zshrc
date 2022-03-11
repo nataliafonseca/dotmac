@@ -2,6 +2,11 @@
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/Users/natalia/.local/bin
 
+## antlr
+export CLASSPATH=".:/Users/natalia/.antlr/antlr-4.9.2-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /Users/natalia/.antlr/antlr-4.9.2-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
 ## homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
