@@ -86,11 +86,14 @@ mkdir ~/.nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
-nvm install 16
+nvm install --lts
 npm install --global yarn
 npm install --global @dotenv/cli
 npm install --global clean-css-cli
 npm install --global sync-dotenv
+nvm install node --reinstall-packages-from=lts/*
+nvm use lts/*
+nvm alias default lts/*
 
 # AppStore
 brew install mas

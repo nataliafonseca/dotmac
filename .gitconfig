@@ -17,6 +17,7 @@
 	s = !git status -s
 	l = !git log --pretty=format:'%C(yellow)%h%C(red)%d %C(white)%s - %C(cyan)%cn%C(white), %C(green)%cr'
 	r = !git reset --soft
+	revert = !git add . && git reset --hard HEAD
 	amend = !git add --all && git commit --amend --no-edit
 	count = !git shortlog -s --grep
 [filter "lfs"]
