@@ -49,7 +49,6 @@ zstyle ':omz:update' frequency 180
 plugins=(git
          gitfast
          copypath
-         dotenv
          zsh-interactive-cd
          zsh-z
          zsh-autosuggestions

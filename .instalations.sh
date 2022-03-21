@@ -91,6 +91,8 @@ npm install --global yarn
 npm install --global @dotenv/cli
 npm install --global clean-css-cli
 npm install --global sync-dotenv
+npm install --global @vue/cli
+npm install --global @vue/cli-service-global
 nvm install node --reinstall-packages-from=lts/*
 nvm use lts/*
 nvm alias default lts/*
