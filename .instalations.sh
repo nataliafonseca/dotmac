@@ -32,38 +32,48 @@ brew install --cask sublime-text
 touch '/Users/natalia/Library/Application Support/Sublime Text/.Disable Safe Mode Shortcut'
 
 # varied programs
-brew install --cask notion
-brew install --cask firefox
-brew install --cask scroll-reverser
-brew install --cask rectangle
-brew install --cask visual-studio-code
-brew install --cask raycast
-brew install --cask google-drive
 brew install --cask 4k-video-downloader
 brew install --cask alt-tab
 brew install --cask bartender
+brew install --cask beekeeper-studio
+brew install --cask cleanshot
+brew install --cask discord
 brew install --cask docker
+brew install --cask fig
+brew install --cask firefox
+brew install --cask forklift
 brew install --cask github
+brew install --cask gitkraken
+brew install --cask google-drive
 brew install --cask iina
 brew install --cask imageoptim
 brew install --cask insomnia
-brew install --cask beekeeper-studio
-brew install --cask qbittorrent
-brew install --cask snipaste
-brew install --cask slack
-brew install --cask discord
-brew install --cask telegram
-brew install --cask whatsapp
-brew install --cask zotero
-brew install --cask zoom
-brew install --cask kawa
 brew install --cask intellij-idea
-brew install pipx
+brew install --cask kawa
+brew install --cask microsoft-teams
+brew install --cask notion
+brew install --cask qbittorrent
+brew install --cask raycast
+brew install --cask rectangle
+brew install --cask scroll-reverser
+brew install --cask slack
+brew install --cask snipaste
+brew install --cask sublime-merge
+brew install --cask telegram
+brew install --cask visual-studio-code
+brew install --cask whatsapp
+brew install --cask zoom
+brew install --cask zotero
+# brew install --cask android-studio
+# brew install --cask local
+# brew install --cask mongodb-compass 
+# brew install --cask r
 brew install bat
 brew install exa
+brew install fzf
+brew install pipx
 brew install rclone
 brew install youtube-dl
-brew install fzf
 
 # java
 brew install openjdk@11

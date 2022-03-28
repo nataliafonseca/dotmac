@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init zsh pre)"
+
 # environment setup
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/Users/natalia/.local/bin
@@ -84,6 +88,10 @@ alias venv="source ./.venv/bin/activate"
 alias poetryrm="rm -rf `poetry env info -p`"
 alias speedtest="networkQuality"
 
+## pnpm
+which pnpm > /dev/null 2>&1 && alias npm="pnpm"
+which pnpm > /dev/null 2>&1 && alias npx="pnpm dlx"
+
 ## ssh connection to servers
 alias homelab="ssh natalia@192.168.0.10"
 alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
@@ -107,3 +115,9 @@ function yarn-audit-fix() {
   yarn import
   rm package-lock.json
 }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init zsh post)"
+
