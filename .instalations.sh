@@ -51,6 +51,7 @@ brew install --cask insomnia
 brew install --cask intellij-idea
 brew install --cask kawa
 brew install --cask microsoft-teams
+brew install --cask ngrok
 brew install --cask notion
 brew install --cask qbittorrent
 brew install --cask raycast
@@ -65,6 +66,7 @@ brew install --cask whatsapp
 brew install --cask zoom
 brew install --cask zotero
 # brew install --cask android-studio
+# brew install --cask dotnet-sdk
 # brew install --cask local
 # brew install --cask mongodb-compass 
 # brew install --cask r

@@ -1,7 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
-
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 # environment setup
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/Users/natalia/.local/bin
@@ -17,6 +15,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+## asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 ## nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
@@ -27,15 +28,18 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 ## java
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+export PATH="/Users/natalia/Documents/jdk-11.0.13.jdk/Contents/Home/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+export CPPFLAGS="-I/Users/natalia/Documents/jdk-11.0.13.jdk/Contents/Home/include"
 
 ## rust/cargo
 export PATH="/Users/natalia/.cargo/bin:$PATH"
 
 ## react native
 export REACT_EDITOR=code
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
+# export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=/Users/natalia/Documents/jdk-11.0.13.jdk/Contents/Home
 export ANDROID_HOME=/Users/natalia/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -77,6 +81,7 @@ alias updots="gdot add -u; gdot commit -m 'update dotfiles'; gdot push"
 
 ## general
 alias py="python"
+alias ipy="ipython"
 alias clone="gh repo clone"
 alias dc="docker compose"
 alias minifycss="cleancss -o style.min.css style.css --with-rebase"
@@ -87,10 +92,6 @@ alias mkvenv="python -m venv ./.venv"
 alias venv="source ./.venv/bin/activate"
 alias poetryrm="rm -rf `poetry env info -p`"
 alias speedtest="networkQuality"
-
-## pnpm
-which pnpm > /dev/null 2>&1 && alias npm="pnpm"
-which pnpm > /dev/null 2>&1 && alias npx="pnpm dlx"
 
 ## ssh connection to servers
 alias homelab="ssh natalia@192.168.0.10"
@@ -106,6 +107,7 @@ alias dprune="docker system prune --all --volumes"
 alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml -p postgres"
 alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml -p mongo"
 alias redis="docker compose -f /Users/natalia/.local/bin/redis.yaml -p redis"
+alias oracle="docker compose -f /Users/natalia/.local/bin/oracle.yaml -p oracle"
 
 # npm audit fix for yarn projects
 function yarn-audit-fix() {
@@ -119,5 +121,4 @@ function yarn-audit-fix() {
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
-
+. "$HOME/.fig/shell/zshrc.post.zsh"
