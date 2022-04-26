@@ -107,7 +107,13 @@ alias dprune="docker system prune --all --volumes"
 alias postgres="docker compose -f /Users/natalia/.local/bin/postgres.yaml -p postgres"
 alias mongo="docker compose -f /Users/natalia/.local/bin/mongo.yaml -p mongo"
 alias redis="docker compose -f /Users/natalia/.local/bin/redis.yaml -p redis"
-alias oracle="docker compose -f /Users/natalia/.local/bin/oracle.yaml -p oracle"
+alias neo4j="docker compose -f /Users/natalia/.local/bin/neo4j.yaml -p neo4j"
+alias cassandra="docker compose -f /Users/natalia/.local/bin/cassandra.yaml -p cassandra"
+
+# docker exec
+function dsh() {
+  docker exec -it $1 sh
+}
 
 # npm audit fix for yarn projects
 function yarn-audit-fix() {

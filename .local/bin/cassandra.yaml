@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  cassandra:
+    image: cassandra
+    container_name: cassandra
+    restart: on-failure
+    ports:
+      - 9042:9042

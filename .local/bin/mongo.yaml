@@ -1,9 +1,9 @@
-version: "3.8"
+version: "3.9"
 
 services:
   mongodb:
     image: mongo
-    container_name: mongodb
+    container_name: mongo
     restart: on-failure
     ports:
       - '27017:27017'
