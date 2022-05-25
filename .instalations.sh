@@ -32,6 +32,7 @@ brew install --cask sublime-text
 touch '/Users/natalia/Library/Application Support/Sublime Text/.Disable Safe Mode Shortcut'
 
 # varied programs
+brew install --cask 1password
 brew install --cask 4k-video-downloader
 brew install --cask alt-tab
 brew install --cask bartender
@@ -42,8 +43,6 @@ brew install --cask docker
 brew install --cask fig
 brew install --cask firefox
 brew install --cask forklift
-brew install --cask github
-brew install --cask gitkraken
 brew install --cask google-drive
 brew install --cask iina
 brew install --cask imageoptim
@@ -59,17 +58,12 @@ brew install --cask rectangle
 brew install --cask scroll-reverser
 brew install --cask slack
 brew install --cask snipaste
-brew install --cask sublime-merge
 brew install --cask telegram
 brew install --cask visual-studio-code
 brew install --cask whatsapp
 brew install --cask zoom
 brew install --cask zotero
-# brew install --cask android-studio
-# brew install --cask dotnet-sdk
-# brew install --cask local
-# brew install --cask mongodb-compass 
-# brew install --cask r
+brew install asdf
 brew install bat
 brew install exa
 brew install fzf
@@ -77,54 +71,59 @@ brew install pipx
 brew install rclone
 brew install youtube-dl
 
+# asdf
+brew install asdf
+
 # java
-brew install openjdk@11
-sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+asdf plugin-add java
+asdf list-all java
+asdf install java openjdk-17.0.2
+asdf global java openjdk-17.0.2
 
-# python
-brew install pyenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-pyenv install --list
-pyenv install 3.10.2
-pyenv global 3.10.2
-brew install python-tk@3.10
-brew install poetry
-poetry config virtualenvs.in-project true
+asdf plugin-add maven
+asdf list-all maven
+asdf install maven 3.8.5
+asdf global maven 3.8.5
 
-# node
-brew install nvm
-mkdir ~/.nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
-[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
-nvm install --lts
+# nodejs
+asdf plugin-add nodejs
+asdf install nodejs lts
+asdf global nodejs lts
+
 npm install --global yarn
 npm install --global @dotenv/cli
 npm install --global clean-css-cli
 npm install --global sync-dotenv
 npm install --global @vue/cli
 npm install --global @vue/cli-service-global
-nvm install node --reinstall-packages-from=lts/*
-nvm use lts/*
-nvm alias default lts/*
+
+# python
+asdf plugin-add python
+asdf list-all python
+asdf install python 3.10.4
+asdf global python 3.10.4
+
+brew install poetry
+poetry config virtualenvs.in-project true
+
 
 # AppStore
 brew install mas
-mas install 1176895641  # Spark
 mas install 585829637   # Todoist
 mas install 1507246666  # Presentify
 mas install 1289583905  # Pixelmator Pro
 mas install 1355679052  # Dropover
-mas install 1333542190  # 1password 7
 mas install 462054704   # Word
 mas install 462058435   # Excel
 mas install 462062816   # PowerPoint
-mas install 409203825   # Numbers
-mas install 409201541   # Pages
-mas install 409183694   # Keynote
-mas install 497799835   # XCode
 mas install 411643860   # DaisyDisk
+mas install 824183456   # Affinity Photo
+mas install 824171161   # Affinity Designer
+# mas install 1176895641  # Spark
+# mas install 409203825   # Numbers
+# mas install 409201541   # Pages
+# mas install 409183694   # Keynote
+# mas install 497799835   # XCode
 
 
 # -> to repeat keypresses, but disables special keys on hold

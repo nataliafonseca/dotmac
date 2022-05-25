@@ -1,13 +1,10 @@
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # environment setup
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/Users/natalia/.local/bin
-
-## antlr
-export CLASSPATH=".:/Users/natalia/.antlr/antlr-4.9.2-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /Users/natalia/.antlr/antlr-4.9.2-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
+export PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
 
 ## homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
@@ -17,34 +14,8 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 ## asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-## nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-
-## pyenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-## java
-export PATH="/Users/natalia/Documents/jdk-11.0.13.jdk/Contents/Home/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-# export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
-export CPPFLAGS="-I/Users/natalia/Documents/jdk-11.0.13.jdk/Contents/Home/include"
-
-## rust/cargo
-export PATH="/Users/natalia/.cargo/bin:$PATH"
-
-## react native
-export REACT_EDITOR=code
-# export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
-export JAVA_HOME=/Users/natalia/Documents/jdk-11.0.13.jdk/Contents/Home
-export ANDROID_HOME=/Users/natalia/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ASDF_DATA_DIR=`brew --prefix asdf`
+source $ASDF_DATA_DIR/asdf.sh
 
 # oh-my-zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
@@ -95,7 +66,6 @@ alias speedtest="networkQuality"
 
 ## ssh connection to servers
 alias homelab="ssh natalia@192.168.0.10"
-alias cloudserver="ssh natalia@static.151.42.161.5.clients.your-server.de"
 
 ## exa
 which exa > /dev/null 2>&1 && alias ls="exa -lh --icons  --time-style=long-iso --group-directories-first --sort=name --sort=ext"
@@ -123,8 +93,6 @@ function yarn-audit-fix() {
   yarn import
   rm package-lock.json
 }
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/natalia/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
